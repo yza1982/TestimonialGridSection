@@ -1,0 +1,266 @@
+@import "./vars";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  @include Small {
+    height: auto;
+    padding: 2em 1.5em;
+  }
+
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+
+  background-color: map-get($colors, "lightGray");
+
+  padding: 0 2em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+}
+
+.opt-50 {
+  opacity: 50%;
+}
+
+.opt-70 {
+  opacity: 50%;
+}
+
+// img-utl
+
+.round-img {
+  border-radius: 50px;
+}
+
+.border-img-violet {
+  border: map-get($colors, "lightViolet") 3px solid;
+}
+
+// card
+
+.card {
+  @include Medium {
+    overflow: scroll;
+  }
+
+  @include Small {
+    overflow: visible;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  gap: 0.9em;
+
+  &-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1em;
+
+    &-wrapper {
+      h3 {
+      }
+      h4 {
+      }
+    }
+  }
+
+  &-content {
+    h1 {
+      @include Medium {
+      }
+
+      @include XSmall {
+        font-size: 1.4em;
+      }
+
+      font-size: 1.8em;
+      font-weight: 600;
+
+      margin-bottom: 1.2em;
+    }
+
+    article {
+      @include Medium {
+      }
+
+      @include XSmall {
+        font-size: 1.1em;
+      }
+
+      font-size: 1.2em;
+      font-weight: 500;
+
+      line-height: 1.5em;
+    }
+  }
+}
+
+.card-pad {
+  @include Small {
+    padding: 3em;
+  }
+
+  padding: 4em;
+}
+
+.card-round-edges {
+  border-radius: 10px;
+}
+
+main {
+  @include Medium {
+  }
+
+  @include Small {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: auto;
+    gap: 1.2em;
+
+    height: auto;
+  }
+
+  @include XSmall {
+  }
+
+  max-width: 1440px;
+  height: 80%;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+
+  gap: 1em;
+}
+
+#daniel {
+  @include Small {
+    grid-column: auto;
+    grid-row: auto;
+
+    height: fit-content;
+  }
+
+  background-color: map-get($colors, "moderateViolet");
+  color: map-get($colors, "lightGray");
+
+  z-index: 0;
+  position: relative;
+
+  grid-column: 1 / span 6;
+  grid-row: 1 / span 3;
+}
+
+#daniel::after {
+  @include Small {
+    background-size: 100px 120px;
+    width: 100px;
+    height: 120px;
+
+    top: 10px;
+    right: 30px;
+  }
+
+  @include XSmall {
+    top: 5px;
+    right: 25px;
+  }
+
+  position: absolute;
+  content: "";
+
+  background: url("../images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-size: 150px 200px;
+
+  width: 150px;
+  height: 200px;
+
+  z-index: -1;
+
+  top: 15px;
+  right: 110px;
+}
+
+#jonathan {
+  @include Small {
+    grid-column: auto;
+    grid-row: auto;
+
+    height: fit-content;
+  }
+
+  background-color: map-get($colors, "veryDarkGrayishBlue");
+  color: map-get($colors, "white");
+
+  grid-column: 7 / span 3;
+  grid-row: 1 / span 3;
+}
+
+#jeanette {
+  @include Small {
+    grid-column: auto;
+    grid-row: auto;
+
+    height: fit-content;
+  }
+
+  background-color: map-get($colors, "white");
+  color: map-get($colors, "veryDarkBlackishBlue");
+
+  grid-column: 1 / span 3;
+  grid-row: 4 / -1;
+}
+
+#patrick {
+  @include Small {
+    grid-column: auto;
+    grid-row: auto;
+
+    height: fit-content;
+  }
+
+  background-color: map-get($colors, "veryDarkBlackishBlue");
+  color: map-get($colors, "white");
+
+  grid-column: 4 / span 6;
+  grid-row: 4 / -1;
+}
+
+#kira {
+  @include Small {
+    grid-column: auto;
+    grid-row: auto;
+
+    height: fit-content;
+  }
+
+  background-color: map-get($colors, "white");
+  color: map-get($colors, "veryDarkBlackishBlue");
+
+  grid-column: 10 / -1;
+  grid-row: 1 / -1;
+}
